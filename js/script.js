@@ -93,5 +93,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadLine);
+    
 
 });
