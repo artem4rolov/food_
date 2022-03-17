@@ -52,11 +52,11 @@ window.addEventListener('DOMContentLoaded', () => {
               seconds = Math.floor((t / 1000) % 60);
 
         return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
+            t,
+            days,
+            hours,
+            minutes,
+            seconds
         };
     }
 
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
             minutes.innerHTML = getZero(t.minutes);
             seconds.innerHTML = getZero(t.seconds);
 
-            if (t.total <= 0) {
+            if (t.t <= 0) {
                 clearInterval(timeInterval);
             }
 
