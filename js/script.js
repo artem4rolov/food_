@@ -41,9 +41,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer
 
-    const deadLine = '2022-05-11';
+    const deadLine = '2022-05-15';
 
     function getTimeRemaining(endtime) {
+
         const t = Date.parse(endtime) - Date.parse(new Date()),
               days = Math.floor(t / (1000 * 60 * 60 * 24)),
               hours = Math.floor((t / (1000 * 60 * 60) % 24)),
@@ -57,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
             'minutes': minutes,
             'seconds': seconds
         };
-    } 
+    }
 
     function getZero(num) {
         if (num >= 0 && num < 10) {
@@ -68,6 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function setClock(selector, endtime) {
+
         const timer = document.querySelector(selector),
               days = timer.querySelector('#days'),
               hours = timer.querySelector('#hours'),
@@ -79,6 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
         updateClock();
 
         function updateClock() {
+
             const t = getTimeRemaining(endtime);
 
             days.innerHTML = getZero(t.days);
@@ -89,10 +92,11 @@ window.addEventListener('DOMContentLoaded', () => {
             if (t.total <= 0) {
                 clearInterval(timeInterval);
             }
+
         }
+
     }
 
     setClock('.timer', deadLine);
-    
 
 });
